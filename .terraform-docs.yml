@@ -1,0 +1,33 @@
+output:
+  file: README.md
+  mode: inject
+  header-from: main.tf
+formatter: markdown table
+sections:
+  show:
+    - header
+    - inputs
+    - resources
+    - outputs
+content:  |-
+  {{ .Header }}
+  ---
+  ## Table of contents
+  - [Resources](#Resources)
+  - [Inputs](#Inputs)
+  - [Outputs](#Outputs)
+  - [Example](#Example)
+  ---
+  
+  {{ .Resources }}
+  ---
+  
+  {{ .Inputs }}
+  ---
+  
+  {{ .Outputs }}
+  ---
+  
+  ## Example
+  {{ include "examples.md" }}
+  
